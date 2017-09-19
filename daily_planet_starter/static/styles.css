@@ -1,3 +1,18 @@
 body {
-  background: white;
+  background: pink;
+}
+.welcome{
+	text-align: center;
+	font-weight: bolder;
+	border-bottom: 3px double black;
+	font-size: 60px;
+}
+
+.sweetarticles{
+	text-align: center;
+	font-weight: bolder;
+	border: 3px dotted black;
+	font-size: 40px;
+	margin-left: 20%;
+	background-color: lightgrey;
 }

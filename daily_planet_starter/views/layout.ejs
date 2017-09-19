@@ -11,5 +11,20 @@
   <div class="container">
     <%- body %>
   </div>
+  <script>
+  $('[type=button]').on('click', function(e) {
+    e.preventDefault();
+    var updateUrl = $(this).parent().attr('action');
+    var articlesData = $(this).parent().serialize();
+    $.ajax({
+      method: 'PUT',
+      url: updateUrl,
+      data: articlesData
+    }).done(function(data) {
+      // get data returned from the PUT route
+      console.log(data);
+    });
+  });
+</script>
   </body>
 </html>

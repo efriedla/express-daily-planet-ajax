@@ -1,3 +1,19 @@
-<h1>Welcome to the Daily Planet!</h1>
+<h1 class="welcome">Welcome to the Daily Planet!</h1>
 
-<a href="/articles">Check out my sweet articles</a>
+<a class="sweetarticles" href="/articles">Check out my sweet articles</a>
+
+<script>
+  $('[type=button]').on('click', function(e) {
+    e.preventDefault();
+    var updateUrl = $(this).parent().attr('action');
+    var articlesData = $(this).parent().serialize();
+    $.ajax({
+      method: 'PUT',
+      url: updateUrl,
+      data: articlesData
+    }).done(function(data) {
+      // get data returned from the PUT route
+      console.log(data);
+    });
+  });
+</script>
